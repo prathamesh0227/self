@@ -1,0 +1,92 @@
+# While loop example: prints numbers 0 to 9
+#!/bin/bash
+a=0
+while [ $a -lt 10 ]
+do
+echo $a
+a=`expr $a + 1`
+done
+-----------------------------------
+# Until loop example: prints numbers 0 to 10
+#!/bin/bash
+a=0
+until [ $a -gt 10 ]
+do
+echo $a
+a=`expr $a + 1`
+done
+-----------------------------------
+# For loop with break: stops when value reaches 5
+#!/bin/bash
+for a in 1 2 3 4 5 6 7 8 9 10
+do
+if [ $a -eq 5 ]
+then
+break
+fi
+echo "Iteration no $a"
+done
+-----------------------------------
+# For loop with continue: skips printing when value is 5
+#!/bin/bash
+for a in 1 2 3 4 5 6 7 8 9 10
+do
+if [ $a -eq 5 ]
+then
+continue
+fi
+echo "Iteration no $a"
+done
+-----------------------------------
+# Infinite loop using while true: prints message every 1 second
+#!/bin/bash
+while true
+do
+echo "Hi, I am infinity loop"
+sleep 1
+done
+-----------------------------------
+# Simple if-fi example: checks if Name equals "Girish"
+#!/bin/bash
+Name="Girish"
+if [ "$Name" = "Girish" ]; then
+echo "His name is Girish. It is true."
+fi
+-----------------------------------
+# If-else example: checks if Age is 18 or older
+#!/bin/bash
+Age=17
+if [ "$Age" -ge 18 ]; then
+echo "You can vote"
+else
+echo "You cannot vote"
+fi
+-----------------------------------
+# If-elif-else example: checks age for voting eligibility
+#!/bin/bash
+Age=17
+if [ "$Age" -ge 18 ]; then
+echo "You can vote"
+elif [ "$Age" -eq 17 ]; then
+echo "You can vote after one year"
+else
+echo "You cannot vote"
+fi
+-----------------------------------
+# Nested if-else example: subject check + marks validation
+#!/bin/bash
+echo "Enter subject"
+read subject
+if [ "$subject" = "Linux" ]
+then
+echo "Enter Marks"
+read marks
+if [ $marks -ge 30 ]
+then
+echo "You passed"
+else
+echo "You failed"
+fi
+else
+echo "Wrong Subject"
+fi
